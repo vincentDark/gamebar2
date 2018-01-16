@@ -1,0 +1,431 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "normalize";
+@import "compass/css3";
+@import "public.scss";
+@import "iniset.scss";
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    >* {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    // background-image: url(../../img/4.gif);
+}
+
+#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    height: 215px;
+    img {
+        height: 100%;
+        max-width: 100%;
+    }
+    div {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        color: white;
+    }
+    @include range-width-in(0px, 767px) {
+        padding: 5px 20px;
+        div {
+            display: none;
+        }
+    }
+}
+
+nav {
+    // max-width: initial;
+    background-color: rgba(0, 149, 255, 0.58);
+    ;
+    .opne {
+        display: none;
+    }
+    ul {
+        max-width: 1200px;
+        margin: auto;
+        // border-bottom: 1px solid blue;
+        @extend %clearfix;
+        li {
+            text-align: center;
+            float: left;
+            width: calc(100%/6);
+            font-size: 28px;
+            font-weight: 800;
+            padding: 25px 10px;
+            color: gold;
+            @include transition (.5s);
+            &:hover {
+                background-color: #ececec;
+                color: black;
+            }
+        }
+    }
+    #openmenu {
+        position: absolute;
+        top: -9999px;
+        &:checked {
+            ~ul {
+                display: block;
+            }
+        }
+    }
+    @include range-width-in(768px, 1024px) {
+        ul {
+            li {
+                font-size: 22px;
+                padding: 20px 5px;
+            }
+        }
+    }
+    @include range-width-in(0px, 767px) {
+        .opne {
+            display: block;
+            text-align: center;
+            text-shadow: 0px 1px 1px #fff;
+            padding: 15px 20px;
+            font-size: 1.5em;
+            color: #fff;
+        }
+        ul {
+            display: none;
+            li {
+                float: initial;
+                width: 100%;
+                padding: 0px 15px;
+                margin: 5px;
+                text-decoration: underline;
+                text-decoration-style: double;
+                text-decoration-color: #99caec;
+            }
+        }
+    }
+}
+
+.navOption {
+    max-width: 1200px;
+    margin: auto;
+    @extend %clearfix;
+    .optiongameclass {
+        float: left;
+        width: calc(100%/9 - 20px);
+        margin: 10px;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: cell;
+        @include border-radius(15px);
+    }
+    /* line 173, ../sass/screen.scss */
+    .optiongameclass {
+        @include box-shadow(1px 1px 3px 1px #171616);
+        transition: all 0.2s linear 0s;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: mediumspringgreen;
+        text-transform: capitalize;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        width: 150px;
+        font-weight: 700;
+        overflow: hidden;
+        background: dimgray;
+        letter-spacing: 4px;
+        font-size: 20px;
+    }
+    /* line 175, ../sass/screen.scss */
+    .optiongameclass:before {
+        content: "\f178";
+        font-family: FontAwesome;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 30px;
+        transform: scale(0, 1);
+        transition: all 0.2s linear 0s;
+    }
+    /* line 191, ../sass/screen.scss */
+    .optiongameclass:hover {
+        text-indent: -9999px;
+    }
+    /* line 193, ../sass/screen.scss */
+    .optiongameclass:hover:before {
+        transform: scale(1, 1);
+        text-indent: 0;
+    }
+}
+
+#ad {
+    margin-top: 25px;
+    @extend %clearfix;
+    div {
+        width: calc(100%/4);
+        height: 165px;
+        background-color: #ded9da;
+        float: left;
+        text-align: center;
+        border: 2px solid white;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../../img/wait.jpg);
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        // @for $i from 1 through 11 {
+        //     &:nth-child(#{$i}) {
+        //         background-image: url(../../img/s#{$i}.jpg);
+        //         &:hover {
+        //             background-image: url(../../img/m#{$i}.gif);
+        //         }
+        //     }
+        // }
+    }
+    h2 {
+        float: left;
+        width: 100%;
+        margin: 30px 0px;
+        color: #fd0101;
+        text-align: center;
+    }
+    @include range-width-in(768px, 1024px) {
+        div {
+            margin: 7.5px;
+            width: calc(100%/2 - 15px);
+        }
+        h2 {
+            padding: 0px 20px;
+            text-align: left;
+        }
+    }
+    @include range-width-in(0px, 767px) {
+        div {
+            width: 100%;
+            padding: 5px 10px;
+        }
+        h2 {
+            font-size: 14px;
+            margin: 15px 0px;
+        }
+    }
+}
+
+#banktab {
+    width: 100%;
+    height: initial;
+    text-align: center;
+    margin: 25px auto;
+    @extend %clearfix;
+    >* {
+        float: left;
+        height: initial;
+        background: initial;
+        border: 1px solid black;
+        width: calc(100%/8);
+        height: 30px;
+        line-height: 30px;
+        background: gray;
+        cursor: pointer;
+        &:hover {
+            background: wheat;
+            color: skyblue;
+        }
+    }
+}
+
+#ad2 {
+    // display: none;
+    margin-top: 25px;
+    @extend %clearfix;
+    .gamebox {
+        width: calc(100%/5 - 40px);
+        height: 200px;
+        float: left;
+        margin: 20px;
+        // border: 3px solid black;
+        // &:nth-child(odd) {
+        //     margin-left: 0px;
+        // }
+        // &:nth-child(even) {
+        //     margin-right: 0px;
+        // }
+        @extend %clearfix;
+        >* {
+            float: left;
+        }
+        .left {
+            width: 100%;
+            padding: 15px;
+            height: 100%;
+            text-align: center;
+            img {
+                height: 70%;
+                width: 100%;
+                border: 1px solid;
+                @include border-radius(25px);
+            }
+            .btn {
+                @extend %glossy-button;
+                width: 75%;
+                height: calc(30% - 10px);
+                margin: 5px;
+            }
+        }
+        .right {
+            width: 70%;
+            height: 100%;
+            padding: 20px;
+            display: none;
+            .score {
+                height: 40%;
+                letter-spacing: 5px;
+                p {
+                    margin-top: 3px;
+                    span {
+                        color: #02426f;
+                        letter-spacing: 3px;
+                    }
+                }
+            }
+            .game-name {
+                height: 60%;
+                padding: 10px 0px;
+                >* {
+                    margin-bottom: 5px;
+                }
+                h4 {
+                    font-size: 1.5em;
+                    color: #052958;
+                }
+                h5 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @include range-width-in(768px, 1024px) {
+        margin-top: 15px;
+        .gamebox {
+            width: 80%;
+            margin: auto;
+            float: initial;
+            margin-bottom: 10px;
+            &:nth-child(odd) {
+                margin-left: auto;
+            }
+            &:nth-child(even) {
+                margin-right: auto;
+            }
+        }
+    }
+    @include range-width-in(0px, 767px) {
+        margin-top: 5px;
+        .gamebox {
+            width: 100%;
+            margin: auto;
+            height: 250px;
+            float: initial;
+            margin-bottom: 10px;
+            position: relative;
+            &:nth-child(odd) {
+                margin-left: auto;
+            }
+            &:nth-child(even) {
+                margin-right: auto;
+            }
+            .left {
+                position: absolute;
+                height: 84px;
+                padding: 0px;
+                left: 15px;
+                top: 15px;
+                img {
+                    height: 100%;
+                }
+                .btn {
+                    display: none;
+                }
+            }
+            .right {
+                width: 100%;
+                >* {
+                    float: right
+                }
+                .score {
+                    width: 60%;
+                }
+                .game-name {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    max-width: initial;
+    background-color: #000;
+    text-align: center;
+    margin-top: 30px;
+    padding: 5px;
+    >* {
+        margin-top: 15px;
+    }
+    h3 {
+        color: darkkhaki;
+    }
+    p {
+        color: white;
+        br {
+            display: none;
+        }
+    }
+    @include range-width-in(0px, 767px) {
+        margin-top: 10px;
+        h3 {
+            font-size: 12px;
+        }
+        p {
+            font-size: 13px;
+            br {
+                display: initial;
+            }
+        }
+    }
+}
