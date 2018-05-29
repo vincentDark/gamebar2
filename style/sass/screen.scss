@@ -7,6 +7,7 @@
 @import "compass/css3";
 @import "public.scss";
 @import "iniset.scss";
+
 html,
 body {
     min-height: 100%;
@@ -18,18 +19,8 @@ body {
         max-width: 1200px;
         margin: auto;
     }
-    // background-image: url(../../img/4.gif);
-}
+    @include background-image(radial-gradient(circle at center, #f7f7f7 0, #101010 70%));
 
-#bgvid {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
 }
 
 header {
@@ -267,7 +258,7 @@ nav {
 }
 
 #ad2 {
-    // display: none;
+    display: none;
     margin-top: 25px;
     @extend %clearfix;
     .gamebox {

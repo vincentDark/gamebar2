@@ -171,7 +171,6 @@ window.onload = function() {
             href: '#'
         },
     }
-    console.log(bankmenu);
     tarframe = document.getElementById('banktab');
     for (var index = 0; index < 40; index++) {
         var element = document.createElement('a');
